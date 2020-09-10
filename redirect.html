@@ -39,7 +39,7 @@
     else if(url.searchParams.get("g"))thing=`https://google.com/search?q=${url.searchParams.get("g")}`
     else if(url.searchParams.get("u"))try{thing=new URL(CryptoJS.AES.decrypt(url.searchParams.get("u"), "timet0encrypt0rdecrypt").toString(CryptoJS.enc.Utf8)).href}catch(err){thing=`https://stackoverflow.com/404.html`}
     else thing=`https://stackoverflow.com/404.html`
-    if(url.searchParams.get("u"))console.log(CryptoJS.AES.decrypt(url.searchParams.get("u"), "timet0encrypt0rdecrypt").toString(CryptoJS.enc.Utf8),url.searchParams.get("u"))
+    if(url.searchParams.get("u"))document.getElementById("warning").style="display:none;"
     setTimeout(v=>location.replace(thing),3000)
     let loadman=()=>{document.getElementById('airbus-or-something').href=thing}
   </script>
@@ -51,6 +51,12 @@
       }
     </style>
   </noscript>
+  <style>
+    #warning{
+      border: solid #ed6666;
+      background-color: #ffab91;
+    }
+  </style>
 </head>
 
 <body class="col1-page unified-theme">
@@ -463,6 +469,11 @@
 
               <p>If the link doesn't work, please <a onload="loadman()" id="airbus-or-something">click here</a></p>
               <p>Browse our <a href="https://stackoverflow.com/tags">popular tags</a></p>
+              
+              <div style="display:none;" id="warning">
+                <p><b>Beware of phishing!</b><br/>
+                  If you get a webpage asking for credentials after this redirect portal, <b>close it, leave it, do whatever<br/><i>as long as you don't put your credentials in there</i></b>
+              </div>
             </div>
           </div>
         </div>
