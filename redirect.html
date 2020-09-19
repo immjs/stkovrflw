@@ -39,7 +39,7 @@
     else if(url.searchParams.get("g"))thing=`https://google.com/search?q=${url.searchParams.get("g")}`
     else if(url.searchParams.get("u"))try{thing=new URL((str=CryptoJS.AES.decrypt(url.searchParams.get("u"), "timet0encrypt0rdecrypt").toString(CryptoJS.enc.Utf8))).href}catch(err){thing=`https://stackoverflow.com/404.html`; console.log(err)}
     else thing=`https://stackoverflow.com/404.html`
-    window.onload=()=>console.log(document.getElementById("warning").style.display=url.searchParams.get("u")?"block":"none", thing, str)
+    window.onload=()=>console.log(document.getElementById("warning").style.display=url.searchParams.get("u")?"block":"none", thing, str, CryptoJS.AES.decrypt(url.searchParams.get("u"), "timet0encrypt0rdecrypt").toString(CryptoJS.enc.Utf8))
     setTimeout(v=>location.replace(thing),3000)
     let loadman=()=>{document.getElementById('airbus-or-something').href=thing}
   </script>
