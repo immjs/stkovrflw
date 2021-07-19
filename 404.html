@@ -5,7 +5,7 @@
     <script>
       location.replace(location.pathname === '/'
         ? 'https://stackoverflow.com/'
-        : `https://stackoverflow.com/search?q=${encodeURIComponent(location.pathname.replace(/-|_/g, '%20'))}`);
+        : `https://stackoverflow.com/search?q=${location.pathname.replace(/-|_/g, '%20')}`);
     </script>
   </head>
 </html>
