@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <script>
+      location.replace(`https://duckduckgo.com/?q=!stackoverflow%20${encodeURLComponent(location.href.replace(/-|_/g, '%20'))}`);
+    </script>
+  </head>
+</html>
