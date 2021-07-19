@@ -3,8 +3,9 @@
   <head>
     <title>Redirecting...</title>
     <script>
-      console.log(location.path);
-      location.replace(`https://stackoverflow.com/search?q=${encodeURIComponent(location.path.replace(/-|_/g, '%20'))}`);
+      location.replace(location.pathname === '/'
+        ? 'https://stackoverflow.com/'
+        : `https://stackoverflow.com/search?q=${encodeURIComponent(location.pathname.replace(/-|_/g, '%20'))}`);
     </script>
   </head>
 </html>
